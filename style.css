@@ -457,12 +457,15 @@ main {
 /* ----- Navigation -----*/
 /* --------------------------------- */
 
+
 .nav {
   min-block-size: 100vh;
   position: fixed;
   width: 100%;
-  background-color: #ff5e99;
-  background-image: var(--gradient-brand);
+  background: transparent;
+
+  background-color: black;
+  /* background-image: var(--gradient-brand); */
   transition: 450ms var(--easing);
   z-index: 3;
 }
