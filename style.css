@@ -686,7 +686,10 @@ body.light .logo {
 .work-textbox {
   flex-basis: 49%;
 }
+.exp-textbox{
+flex-basis: 90%;
 
+}
 .work-img {
   max-inline-size: 785px;
   transition: 0.6s all;
@@ -721,6 +724,14 @@ body.light .work-img {
   list-style-type: disc;
   margin-block-end: var(--gutter-x-small);
 }
+
+.exp-technologies {
+  list-style-position: inside;
+  list-style-type: disc;
+  margin-block-end: var(--gutter-x-small);
+}
+
+
 
 .work-links {
   display: inline-flex;
