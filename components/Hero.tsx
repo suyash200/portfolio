@@ -9,6 +9,7 @@ import Image from "next/image"
 import ImageCard from "./ui/image-card"
 import { useEffect, useState } from "react";
 import { GithubIcon, LinkedinIcon, TwitterIcon, X } from "lucide-react";
+import Star9 from "./stars/s9";
 
 export default function ResponsiveResizableLayout() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -55,8 +56,8 @@ export default function ResponsiveResizableLayout() {
   //  );
   return (
 
-    <section className="bg-[var(--main)] border-4 border-[var(--border)] shadow-[var(--shadow)] px-8 py-14 min-w-full -h-auto">
-      <div className="max-w-7xl mx-auto flex  flex-col md:flex-row-reverse items-center gap-16">
+    <section className="flex items-center justify-center min-h-screen my-auto    w-full">
+      <div className="max-w-8xl m-auto min-h-screen flex flex-col md:flex-row-reverse items-center justify-center gap-x-80  ">
 
         {/* Image Section */}
         <div className="flex justify-center md:justify-left w-full md:w-1/2">
@@ -67,15 +68,14 @@ export default function ResponsiveResizableLayout() {
         </div>
 
         {/* Text Section */}
-        <div className="w-full md:w-1/2 text-center md:text-left">
+        <div className="w-full  md:w-1/2 text-center md:text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-[var(--foreground)] mb-6 leading-tight">
-            Suyash - Software Developer
-          </h1>
-          <p className="text-xl sm:text-2xl text-[var(--foreground)] mb-10 font-medium">
+            Suyash Lade           </h1>
+          <p className="text-xl sm:text-2xl text-[var(--foreground)] mb-10 font-medium max-w-xl mx-auto">
             Delivering high-quality software solutions for a seamless, scalable experience.
           </p>
 
-          <div className="flex flex-row">
+          <div className="flex flex-row gap-8 justify-center">
             <button className="bg-[var(--main)] text-[var(--main-foreground)] px-8 py-4 font-bold border-2 border-[var(--border)] shadow-[var(--shadow)] hover:translate-x-1 hover:translate-y-1 transition-transform" onClick={() => window.open("https://www.linkedin.com/in/suyash-lade", "_blank")}>
               <LinkedinIcon>LinkedIn</LinkedinIcon>
             </button>
