@@ -1,10 +1,7 @@
-import Blogs from "@/components/Blogs";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/Navbar";
 import Projects from "@/components/Projects";
-import NeobrutalismTag from "@/components/starredComponent";
-import Image from "next/image";
 
 
 

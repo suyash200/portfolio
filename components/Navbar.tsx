@@ -1,10 +1,5 @@
 "use client";
 
-import {
-  Menubar,
-  MenubarMenu,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
 
 export default function NavBar() {
   const navItems = [{ label: "Experience", link: "/#exp" }, { label: "Projects", link: "/#projects" }, { label: "Resume", link: "/#Resume" }];

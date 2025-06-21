@@ -1,11 +1,5 @@
 "use client"
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
-import { GithubIcon, LinkedinIcon, TwitterIcon, X } from "lucide-react";
-import Image from "next/image";
+import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import Star9 from "./stars/s9";
 import ImageCard from "./ui/image-card";

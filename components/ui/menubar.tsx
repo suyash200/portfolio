@@ -24,16 +24,10 @@ function Menubar({
 }
 
 function MenubarMenu({
-  className,
+  className: _className, // explicitly unused
   ...props
 }: React.ComponentProps<typeof MenubarPrimitive.Menu> & { className?: string }) {
-  return (
-    <MenubarPrimitive.Menu
-      data-slot="menubar-menu"
-      className={className}
-      {...props}
-    />
-  );
+  return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} />
 }
 
 
@@ -114,6 +108,7 @@ function MenubarItem({
     <MenubarPrimitive.Item
       data-slot="menubar-item"
       data-inset={inset}
+      //@ts-ignore
       className={cn(
         "relative flex cursor-default select-none items-center rounded-base border-2 border-transparent px-2 py-1.5 text-sm font-base outline-hidden focus:border-border data-disabled:pointer-events-none data-disabled:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
