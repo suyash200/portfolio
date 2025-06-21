@@ -13,7 +13,7 @@ export default function ImageCard({ imageUrl, className }: Props) {
         className,
       )}
     >
-      <img className="w-full aspect-1/1" src={imageUrl} alt="image" />
+      <img className="w-full aspect-1/1 h-80" src={imageUrl} alt="image" />
 
     </figure>
   )

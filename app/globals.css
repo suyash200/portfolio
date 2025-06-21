@@ -9,7 +9,7 @@
   --foreground: oklch(0% 0 0);
   --main-foreground: oklch(0% 0 0);
   --main: oklch(66.34% 0.1806 277.2);
-  --border: oklch(0% 0 0);
+  --border: oklch(0% 0 0); /* This is black */
   --ring: oklch(0% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
@@ -19,6 +19,10 @@
   --chart-4: #00D696;
   --chart-5: #0099FF;
   --chart-active-dot: #000;
+
+  /* NEW: Grid line color based on your --border, with some transparency */
+  --tw-grid-line-color: oklch(0% 0 0 / 0.08); /* Black with 8% opacity for light mode */
+  --grid-cell-size: 70px 70px; /* Define the grid cell size */
 }
 
 .dark {
@@ -27,7 +31,7 @@
   --foreground: oklch(92.49% 0 0);
   --main-foreground: oklch(0% 0 0);
   --main: oklch(66.34% 0.1806 277.2);
-  --border: oklch(0% 0 0);
+  --border: oklch(0% 0 0); /* This is black */
   --ring: oklch(100% 0 0);
   --shadow: 4px 4px 0px 0px var(--border);
   --chart-1: #7A83FF;
@@ -36,6 +40,9 @@
   --chart-4: #00BD84;
   --chart-5: #008AE5;
   --chart-active-dot: #fff;
+
+  /* UPDATED: Grid line color for dark mode - using foreground with opacity for better visibility */
+  --tw-grid-line-color: oklch(92.49% 0 0 / 0.08); /* Foreground (white) with 8% opacity for dark mode */
 }
 
 @theme inline {
@@ -62,13 +69,20 @@
   --font-weight-base: 500;
   --font-weight-heading: 700;
 }
-  
+
 @layer base {
   body {
-    @apply text-foreground font-base bg-background;
+    @apply text-foreground font-base; /* Keep existing Tailwind applies */
+
+    /* Apply the global background color, image, size, and repeat here */
+    background-color: var(--background); /* This sets the base background color */
+    background-image: var(--app-grid-pattern); /* Uses the custom pattern from tailwind.config.js */
+    background-size: var(--grid-cell-size);   /* Uses the custom size variable */
+    background-repeat: repeat;               /* Ensures the pattern repeats */
+    min-height: 100vh;                       /* Ensure body covers full viewport */
   }
 
-  h1, h2, h3, h4, h5, h6{
+  h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
 }

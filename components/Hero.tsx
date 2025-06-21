@@ -27,43 +27,17 @@ export default function ResponsiveResizableLayout() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  //  return (
-  //    <ResizablePanelGroup
-  //      direction={isSmallScreen ? 'vertical' : 'horizontal'}
-  //      className="rounded-base w-full max-w-7xl mx-auto border-4 border-border text-main-foreground shadow-shadow"
-  //    >
-  //      <ResizablePanel defaultSize={50}>
-  //        <ResizablePanelGroup direction="vertical">
-  //          <ResizablePanel>
-  //            <div className="flex flex-col h-full items-center justify-center bg-main p-6 gap-2 text-center">
-  //              <span className="font-heading text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-  //                <span>Suyash</span> Lade
-  //              </span>
-  //              <span className="font-base text-base sm:text-lg md:text-xl text-white max-w-xl">
-  //                Delivering high-quality software solutions for a seamless and intuitive user experience.
-  //              </span>
-  //            </div>
-  //          </ResizablePanel>
-  //        </ResizablePanelGroup>
-  //      </ResizablePanel>
-  //
-  //      <ResizablePanel defaultSize={50} maxSize={100}>
-  //        <div className="flex h-[60vh] items-center justify-center bg-main p-8">
-  //          <ImageCard imageUrl="/profile.jpeg" caption="" />
-  //        </div>
-  //      </ResizablePanel>
-  //    </ResizablePanelGroup>
-  //  );
+
   return (
 
-    <section className="flex items-center justify-center min-h-screen my-auto    w-full">
-      <div className="max-w-8xl m-auto min-h-screen flex flex-col md:flex-row-reverse items-center justify-center gap-x-80  ">
+    <section className="flex items-center justify-center min-h-screen my-auto    w-full bg-[/bg.svg] ">
+      <div className="max-w-8xl m-auto min-h-screen flex flex-col md:flex-row-reverse items-center justify-center gap-x-80 ">
 
         {/* Image Section */}
         <div className="flex justify-center md:justify-left w-full md:w-1/2">
           <ImageCard
-            imageUrl="/profile.jpeg"
-            className="w-72 h-72 sm:w-80 sm:h-80 object-cover border-4 border-[var(--border)] shadow-[var(--shadow)] bg-[var(--secondary-background)] rounded-[var(--radius-base)]"
+            imageUrl="/hero1.png"
+            className="w-80 h-84 sm:w-80 sm:h-80 object-cover border-4 border-[var(--border)] shadow-[var(--shadow)] bg-[var(--secondary-background)] rounded-[var(--radius-base)]"
           />
         </div>
 
