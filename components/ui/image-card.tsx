@@ -2,19 +2,21 @@ import { cn } from "@/lib/utils"
 
 type Props = {
   imageUrl: string
+  caption?: string
   className?: string
 }
 
-export default function ImageCard({ imageUrl, className }: Props) {
+export default function ImageCard({ imageUrl, caption, className }: Props) {
   return (
     <figure
       className={cn(
-        "w-[500px]  overflow-hidden rounded-base  border-border bg-main font-base",
+        "w-[250px] rounded-base border-2 border-border bg-main font-base shadow-shadow",
         className,
       )}
     >
-      <img className="w-full aspect-1/1 h-80" src={imageUrl} alt="image" />
+      <img className="w-full h-full aspect-1/1" src={imageUrl} alt="image" />
 
     </figure>
   )
 }
+

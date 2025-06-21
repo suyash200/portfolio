@@ -1,15 +1,14 @@
 "use client"
 import {
-
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/components/ui/resizable"
-import Image from "next/image"
-import ImageCard from "./ui/image-card"
-import { useEffect, useState } from "react";
+} from "@/components/ui/resizable";
 import { GithubIcon, LinkedinIcon, TwitterIcon, X } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import Star9 from "./stars/s9";
+import ImageCard from "./ui/image-card";
 
 export default function ResponsiveResizableLayout() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -30,42 +29,62 @@ export default function ResponsiveResizableLayout() {
 
   return (
 
-    <section className="flex items-center justify-center min-h-screen my-auto    w-full bg-[/bg.svg] ">
-      <div className="max-w-8xl m-auto min-h-screen flex flex-col md:flex-row-reverse items-center justify-center gap-x-80 ">
+    < section className="relative flex items-center justify-center min-h-screen w-full bg-[/bg.svg]" >
+      {/* Decorative Background Stars */}
+      < div className="absolute top-10 left-10 opacity-100 animate-float z-0 md:not-focus-visible:" >
+        <Star9 size={100} color="#ffcd08" stroke="#FDE68A" strokeWidth={1.5} />
+      </div >
 
+      <div className="absolute bottom-60 right-20 opacity-100 animate-spinSlow z-0">
+        <Star9 size={80} color="#ffcd08" stroke="#FFE066" strokeWidth={2} />
+      </div>
+
+      <div className="absolute top-10 left-10 opacity-90 animate-floatSpin">
+        <Star9 size={50} color="#ffcd08" stroke="#FDE68A" strokeWidth={1.5} />
+      </div>
+
+      <div className="max-w-8xl m-auto min-h-screen flex flex-col md:flex-row-reverse items-center justify-center gap-x-80 z-10 py-12">
         {/* Image Section */}
-        <div className="flex justify-center md:justify-left w-full md:w-1/2">
+        <div className="flex justify-center md:justify-left w-full md:w-1/2 relative z-10">
           <ImageCard
-            imageUrl="/hero1.png"
-            className="w-80 h-84 sm:w-80 sm:h-80 object-cover border-4 border-[var(--border)] shadow-[var(--shadow)] bg-[var(--secondary-background)] rounded-[var(--radius-base)]"
+            imageUrl="/myself.jpg"
+            className="w-96 h-[28rem] sm:w-[28rem] sm:h-[28rem] object-cover border-4 border-[var(--border)] shadow-[var(--shadow)] bg-[var(--secondary-background)] rounded-[var(--radius-base)]"
+            caption="Back-End Developer"
           />
         </div>
 
         {/* Text Section */}
-        <div className="w-full  md:w-1/2 text-center md:text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-[var(--foreground)] mb-6 leading-tight">
-            Suyash Lade           </h1>
-          <p className="text-xl sm:text-2xl text-[var(--foreground)] mb-10 font-medium max-w-xl mx-auto">
-            Delivering high-quality software solutions for a seamless, scalable experience.
+        <div className="w-full md:w-1/2 text-center md:text-center relative z-10">
+          <h1 className="text-6xl sm:text-7xl font-bold text-[var(--foreground)] mb-8 leading-tight">
+            Suyash Lade
+          </h1>
+          <p className="text-2xl sm:text-3xl text-[var(--foreground)] mb-12 font-medium max-w-xl mx-auto leading-relaxed">
+            Developing high-quality software solutions for a seamless, scalable experience.
           </p>
 
           <div className="flex flex-row gap-8 justify-center">
-            <button className="bg-[var(--main)] text-[var(--main-foreground)] px-8 py-4 font-bold border-2 border-[var(--border)] shadow-[var(--shadow)] hover:translate-x-1 hover:translate-y-1 transition-transform" onClick={() => window.open("https://www.linkedin.com/in/suyash-lade", "_blank")}>
-              <LinkedinIcon>LinkedIn</LinkedinIcon>
+            <button
+              className="bg-[var(--main)] text-[var(--main-foreground)] px-8 py-4 font-bold border-2 border-[var(--border)] shadow-[var(--shadow)] hover:translate-x-1 hover:translate-y-1 transition-transform"
+              onClick={() => window.open("https://www.linkedin.com/in/suyash-lade", "_blank")}
+            >
+              <LinkedinIcon />
             </button>
-            <button className="bg-[var(--main)] text-[var(--main-foreground)] px-10 py-4 font-bold border-2 border-[var(--border)] shadow-[var(--shadow)] hover:translate-x-1 hover:translate-y-1 transition-transform" onClick={() => window.open("https://github.com/suyash200", "_blank")}>
+            <button
+              className="bg-[var(--main)] text-[var(--main-foreground)] px-10 py-4 font-bold border-2 border-[var(--border)] shadow-[var(--shadow)] hover:translate-x-1 hover:translate-y-1 transition-transform"
+              onClick={() => window.open("https://github.com/suyash200", "_blank")}
+            >
               <GithubIcon />
             </button>
-            <button className="bg-[var(--main)] text-[var(--main-foreground)] px-10 py-4 font-bold border-2 border-[var(--border)] shadow-[var(--shadow)] hover:translate-x-1 hover:translate-y-1 transition-transform" onClick={() => window.open("https://x.com/SuyashLade", "_blank")}>
+            <button
+              className="bg-[var(--main)] text-[var(--main-foreground)] px-10 py-4 font-bold border-2 border-[var(--border)] shadow-[var(--shadow)] hover:translate-x-1 hover:translate-y-1 transition-transform"
+              onClick={() => window.open("https://x.com/SuyashLade", "_blank")}
+            >
               <TwitterIcon />
             </button>
           </div>
-
-
         </div>
+      </div>    </section >
 
-      </div>
-    </section>
 
   )
 }

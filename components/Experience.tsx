@@ -36,7 +36,7 @@ const experiences = [
 export default function ExperienceSection() {
   return (
     <section className="bg-main text-foreground p-6 border-4 border-border shadow-[var(--shadow)] mx-auto my-12 rounded-[var(--radius-base)] md:w-7xl" id="exp">
-      <h2 className=" text-3xl font-heading bg-blend-color-dodge mb-6 md:text-4xl">Experience</h2>
+      <h2 className=" text-3xl font-heading bg-blend-color-dodge mb-6 md:text-4xl">Experience 💼</h2>
       <div className=" flex flex-col bg-secondary-background p-6 rounded-[var(--radius-base)] border border-border">
         {experiences.map((exp, index) => (
           <div key={index} className="mb-6 border-b flex flex-col gap-2">
@@ -47,7 +47,7 @@ export default function ExperienceSection() {
             <p className="text-lg font-semibold text-primary "><u>{exp.title}</u></p>
             <ul className="list-disc px-6 flex flex-col gap-2" >
               {exp.bullets.map((bullet, index) => (
-                <li key={index}>{exp.bullets[index]}</li>
+                <li key={index} className="text-overflow:truncate">{exp.bullets[index]}</li>
               ))}
             </ul>
           </div>
