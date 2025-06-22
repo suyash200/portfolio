@@ -2,7 +2,7 @@
 
 
 export default function NavBar() {
-  const navItems = [{ label: "Experience", link: "/#exp" }, { label: "Projects", link: "/#projects" }, { label: "Resume", link: "/#Resume" }];
+  const navItems = [{ label: "Journey", link: "/#journey", target: "self" }, { label: "Projects", link: "/#projects", target: "self" }, { label: "Blogs ↗", link: "https://dev.to/jsnomad", target: "_blank" }];
 
 
   return (
@@ -10,7 +10,7 @@ export default function NavBar() {
       <ul className="flex w-full">
         {navItems.map((item, i) => (
           <li key={i} className="flex-1">
-            <a href={`${item.link}`} className="scroll-smooth">
+            <a href={`${item.link}`} target={`${item.target}`} className="scroll-smooth">
               <button
                 type="button"
                 className="
